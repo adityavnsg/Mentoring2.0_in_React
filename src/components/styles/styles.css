@@ -1,0 +1,311 @@
+.nav-bar-containter{
+    background: #1660ab;
+    color:white;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+}
+.nav-bar-links{
+    float: right;
+    margin: 30px;
+}
+.nav-bar-links a{
+    color: white;
+}
+.timer{
+    float: right;
+    margin: 24px;
+    font-size: 23px;
+    font-family: cursive;
+}
+.bg-img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: fixed;
+}
+.form-login{
+    margin: 15%;
+    position: relative;
+    top: 84px;
+    left: 25px;
+    color: black;
+}
+.form-login > form{
+    color: white;
+    background: rgba(40, 44, 52, 0.75);
+}
+.heading{
+    font-size: xx-large;
+    position: relative;
+    left: 35%;
+}
+.jumbotron{
+    margin: 13%;
+    border: 2px solid darkgray;
+    padding: 4% !important;
+}
+.btn-primary {
+    border-color: #2e6da4;
+    float: left;
+}
+#nxt_btn{
+    float: right;
+}
+#questions_container > pre{
+    font-size: large;
+    font-family: Helvetica;
+}
+.options_container{
+    font-size: large;
+    font-family: Helvetica;
+}
+.options_container div > input{
+    margin: 0 5px 0 0;
+}
+.options_container div:nth-child(even){
+    background: #CCC;
+    margin-bottom: 2%;
+}
+.options_container div:nth-child(odd){
+    background: #FFF;
+    margin-bottom: 2%;
+}
+.sidebar-items > h3{
+    background: #1660ab;
+    color: whitesmoke;
+    margin-top: 1px;
+    margin-bottom: 0;
+    padding: 13px 12px 12px;
+ 
+}
+.sidebar-items > ul {
+    list-style: none;
+    font-size: larger;
+    padding: 0;
+}
+.sidebar-items > ul li { 
+    padding: 22px 0 20px 10px;
+    border-bottom: 1px solid lavender;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+}
+
+.side_dropdown{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    overflow: hidden;
+    background: rgba(40, 44, 52, 0.85);
+    color: white;
+    cursor: pointer;
+    font-size: large;
+    display: none;
+    min-width: 200px;
+}
+.side_dropdown > ul{
+    list-style: none;
+    padding: 2px 8px 2px 17px;
+    height: 100%;
+}
+.side_dropdown > ul li{
+    border-bottom: 1px solid darkgray;
+    padding: 5px 0 9px 0;
+    text-align: left;
+    padding: 20px 0;
+} 
+.side_dropdown > ul li :hover{
+    padding: 0 0 0 2px;
+}
+.side_dropdown > ul li:nth-last-child(1){
+    border-bottom: none;
+}
+
+.sidebar-items > ul li:hover{
+    background: white;
+    color: black;
+}
+
+.sidebar-items > ul li:hover .side_dropdown{
+    display: table;
+}
+
+.sidebar-items > ul li .side_dropdown ul li:hover{
+    color: black;
+}
+
+.container-fluid{
+    padding: 0% !important;
+}
+pre{
+    border: 5px solid #ccc;
+}
+.seperate-bg-img{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        position: fixed;
+}
+#chooseExcel{
+    position: fixed !important;
+    bottom: 50% !important;
+    left: 57% !important;
+    padding: 50px 20px!important;
+    background: whitesmoke;
+    background: rgba(255,255,255,0.85);
+    z-index: 2;
+    margin-left: -8%;
+    box-shadow: 0 0 0 6px rgba(22,96,171,0.45);
+    text-align: center;
+}
+#generated_pass{
+    position: relative;
+    left: 7%;
+}
+form{
+    border: 3px solid white;
+    width: 75%;
+    height: auto;
+    padding: 23px 0 10px 0;
+    margin: 0 0 0 13%;
+    font-size: larger;
+}
+.change_text_clr{
+    color: rgb(40, 44, 52);
+    background: white;
+    border-bottom: rgb(40, 44, 52) !important;
+}
+.change_Menu_text_clr{
+    color: #1660ab;
+    border-bottom: 1px solid #1660ab !important;
+}
+.admin_list_text_color{
+    color: rgb(40, 44, 52);
+    background: white;
+    border-bottom: rgb(40, 44, 52) !important;
+}
+#getStyle{
+    border: 1px solid red;
+}
+
+.file{
+    padding: 10px;
+    background: rgb(40, 44, 52);
+    display: table;
+    color: #fff;
+    font-size: large;
+    font-family: monospace;
+     }
+
+input[type="file"] {
+    display: none !important;
+}
+
+div[role="navigation"] > div:first-child{
+    background:rgba(40, 44, 52,0.85);
+    color: white;
+    top : 80px !important; 
+    overflow-y: initial !important;
+}
+footer{
+    position: fixed;
+    left: 87%;
+    top: 98%;
+    color: #1660ab;
+    font-size: inherit;
+    font-weight: bold;
+}
+.logout{
+    float: right;
+    margin: 23px;
+    cursor: pointer;
+}
+.logout > input{
+    background: #337ab7;
+    color: white;
+    border: 2px solid;
+    font-size: larger;
+}
+div[role='navigation']{
+    position: unset !important;
+}
+div[role='navigation'] > div:nth-child(3){
+    position: unset !important;
+}
+.common_msg{
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 40%;
+    background: white;
+    border: 1px solid red;
+    color: red;
+}
+.glyphicon-ok{
+    float: right;
+    border: 1px solid;
+    background: green;
+    color: white;
+    border-radius: 15px;
+    padding: 4px;
+    font-size: large;
+}
+.modal-content{
+    box-shadow: 0 5px 15px #8BC34A !important;
+    border: 1px solid #8BC34A !important;
+}
+.modal-body{
+    font-size: x-large !important;
+}
+.modal-footer button{
+    color:  #fdfbfb !important;
+    background-color: #08eb7a !important;
+}
+.admin-modal .modal-content{
+    box-shadow: 0 5px 15px #F44336 !important;
+    border: 1px solid #da3a3a !important;
+}
+.admin-modal .modal-header { 
+    font-size: x-large !important;
+    color: red;
+}
+.admin-modal .modal-footer button{
+    color: #fdfbfb !important;
+    background-color: #f11010 !important;
+}
+.glyphicon-remove{
+    float: right;
+    border: 1px solid;
+    background: red;
+    color: white;
+    border-radius: 15px;
+    padding: 4px;
+    font-size: large;
+}
+
+.error_modal .modal-content{
+    box-shadow: 0 5px 15px #F44336 !important;
+    border: 1px solid #da3a3a !important;
+}
+.error_modal .modal-header { 
+    font-size: x-large !important;
+    color: red;
+}
+.error_modal .modal-footer button{
+    color: #fdfbfb !important;
+    background-color: #f11010 !important;
+}
+::selection {
+    background: transparent;
+}
+#admin_list_table{
+        margin-left: 20% !important;
+}
