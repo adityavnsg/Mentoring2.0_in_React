@@ -1,8 +1,0 @@
-deleting admin credentials
-forgetpassword
-popup change
-session clearing
-for answers you need to change radio buttons and checkboxes
-username finding
-Change image path from web url to local path
-loading icon while password generates
