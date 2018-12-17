@@ -18,7 +18,7 @@ class App extends React.Component {
         "https://raw.githubusercontent.com/transitive-bullshit/react-background-slideshow/master/example/src/assets/006.jpg" ]} />
         </div>}
             {this.props.children}
-            <footer>Copy rights- @www.cisco.com</footer>
+            <footer>Copy rights- @www.hcl.com</footer>
             </div>
         );
     }
