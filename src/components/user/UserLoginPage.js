@@ -2,6 +2,8 @@ import React from 'react';
 import TextFieldGroup from '../common/TextFieldGroup';
 import * as utils from '../common/GetData';
 import * as properties from '../common/properties';
+import Modal from 'react-bootstrap/lib/Modal';
+import Button from 'react-bootstrap/lib/Button';
 
 class UserLoginPage extends React.Component {
   constructor(props) {

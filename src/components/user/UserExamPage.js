@@ -2,8 +2,10 @@ import React from 'react';
 import createFragment from 'react-addons-create-fragment';
 import * as utils from '../common/GetData';
 import * as properties from '../common/properties';
+import Modal from 'react-bootstrap/lib/Modal';
+import Button from 'react-bootstrap/lib/Button';
 
-var consoledated_report={},logIn_candidate="",logIn_sapId="",logIn_password="",login_stream="",answeredQstns_Count = 1;
+var consoledated_report={},logIn_candidate="",logIn_sapId="",logIn_password="",login_stream="",logIn_candidate_manager="",logIn_candidate_manager_Id="",logIn_candidate_exam_type="",answeredQstns_Count = 1;
 
 
 let blur_click_count = 0;
@@ -25,10 +27,10 @@ class UserExamPage extends React.Component{
             modal_msg : ''
         };
         this.onClick = this.onClick.bind(this);
-        this.escFunction = this.escFunction.bind(this);
-        this.contextMenu = this.contextMenu.bind(this);
+       // this.escFunction = this.escFunction.bind(this);
+       // this.contextMenu = this.contextMenu.bind(this);
         }
-       escFunction(event){
+      /* escFunction(event){
             if((event.keyCode == 123) || (event.ctrlKey && event.keyCode == 82) || (event.keyCode == 116) || (event.keyCode == 13) || (event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.keyCode == 67) || (event.keyCode == 116) || (event.keyCode == 44) ) {
               event.preventDefault();
               return false;
@@ -36,10 +38,10 @@ class UserExamPage extends React.Component{
           }
           contextMenu(event){
             event.preventDefault();
-          }
+          }*/
     componentDidMount(){
-        document.addEventListener("keydown", this.escFunction, false);
-        document.addEventListener("contextmenu",this.contextMenu,false);
+       // document.addEventListener("keydown", this.escFunction, false);
+        //document.addEventListener("contextmenu",this.contextMenu,false);
          logIn_candidate = JSON.parse(sessionStorage.getItem("loginresponse")).data.name;
          logIn_sapId = JSON.parse(sessionStorage.getItem("loginresponse")).data.sapId;
          logIn_password = JSON.parse(sessionStorage.getItem("loginresponse")).data.password;
@@ -62,7 +64,7 @@ class UserExamPage extends React.Component{
         let url = properties.properties.get_topics_api+login_stream+"&topic="+this.state.topic_count;
         window.this_obj = this;
         var self = this;
-        window.addEventListener("blur", function(event){
+       /* window.addEventListener("blur", function(event){
             blur_click_count++;
             if(blur_click_count >1){
                 let url = properties.properties.exam_submit;
@@ -122,7 +124,7 @@ class UserExamPage extends React.Component{
                 self.setState({error:true, showModal:true, modal_msg : "Please don't click on any other Tab, window, browser or any other actions except this exam.\n It will make your exam submit and terminates."});
                 //alert("Please don't click on any other Tab, window, browser or any other actions except this exam.\n It will make your exam submit and terminates.");
             }
-        });
+        });*/
 
         utils.getData(username,logIn_password,url,this,function(res,self) {
             if(typeof res != "string" && res != ""){
@@ -145,10 +147,10 @@ class UserExamPage extends React.Component{
             }
         }); 
     }
-componentWillUnmount(){
+/*componentWillUnmount(){
     document.removeEventListener("keydown", this.escFunction, false);
     document.removeEventListener("contextmenu", this.contextMenu, false);
-  }
+  }*/
   
     onClick(e) {
         (answeredQstns_Count <this.state.data[0].totalTopics*3)?answeredQstns_Count++ : null;
@@ -216,28 +218,28 @@ componentWillUnmount(){
             if(current_elem1 == "medium"){
                 calc_score +=ans_count* 2;
                 maxscore*=2;
-                if(this.state.topics_report[current_elem] == undefined){
-                    this.state.topics_report[current_elem] = calc_score;
+                if(this.state.topics_report[current_elem1] == undefined){
+                    this.state.topics_report[current_elem1] = calc_score;
                 }else{
-                    this.state.topics_report[current_elem]+=calc_score;
+                    this.state.topics_report[current_elem1]+=calc_score;
                 }
                 this.setState({displayItem_type : "easy"});
             }else if(current_elem1 == "hard"){
                 calc_score +=ans_count* 3;
                 maxscore*=3;
-                if(this.state.topics_report[current_elem] == undefined){
-                    this.state.topics_report[current_elem]=calc_score;
+                if(this.state.topics_report[current_elem1] == undefined){
+                    this.state.topics_report[current_elem1]=calc_score;
                 }else{
-                    this.state.topics_report[current_elem]+=calc_score;
+                    this.state.topics_report[current_elem1]+=calc_score;
                 }
                 this.setState({displayItem_type : "medium"});
             }else{
                 calc_score +=ans_count* 1;
                 maxscore*=1;
-                if(this.state.topics_report[current_elem] == undefined){
-                    this.state.topics_report[current_elem]=calc_score;
+                if(this.state.topics_report[current_elem1] == undefined){
+                    this.state.topics_report[current_elem1]=calc_score;
                 }else{
-                    this.state.topics_report[current_elem]+=calc_score;
+                    this.state.topics_report[current_elem1]+=calc_score;
                 }
                 this.setState({displayItem_type : "easy"});
             }

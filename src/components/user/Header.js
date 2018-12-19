@@ -3,6 +3,8 @@ import Countdown from 'react-countdown-now';
 import '../styles/styles.css';
 import * as utils from '../common/GetData';
 import * as properties from '../common/properties';
+import Modal from 'react-bootstrap/lib/Modal';
+import Button from 'react-bootstrap/lib/Button';
 
 let counter = 0;
 const renderer = ({ minutes, seconds }) => {

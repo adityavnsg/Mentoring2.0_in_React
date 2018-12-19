@@ -1,6 +1,7 @@
 import React from 'react';
 import * as properties from '../common/properties';
 import * as SampleExam from './SampleExam';
+
 class UserSampleExam extends React.Component{
     constructor(props){ 
         super(props);
