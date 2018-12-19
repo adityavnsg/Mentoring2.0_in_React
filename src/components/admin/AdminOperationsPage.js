@@ -26,7 +26,7 @@ class AdminOperationsPage extends React.Component{
           stream : '',
           rm : '',
           rmsapId : '',
-          exam_type : '',
+          examType : '',
           generated_Password : '',
           showreportResponse: false,
           reportResponse: '',
@@ -92,7 +92,7 @@ class AdminOperationsPage extends React.Component{
                 this.setState({ [e.target.name]: trim_input});
             }
         }
-        if(e.target.name == "stream" || e.target.name == "exam_type"){
+        if(e.target.name == "stream" || e.target.name == "examType"){
             if(input_value == this.refs.select[0].innerText){
                 this.setState({showModal : true, error : true, modal_msg : "Please select a valid input from the list" });
                 //alert("");
@@ -117,7 +117,7 @@ class AdminOperationsPage extends React.Component{
                     generatedPassword_obj["password"] = "";
                     generatedPassword_obj["manager"]= this.state.rm;
                     generatedPassword_obj["managerSapId"] = this.state.rmsapId;
-                    generatedPassword_obj["exam_type"] = this.state.exam_type;
+                    generatedPassword_obj["examType"] = this.state.examType;
                     generatePassword.push(generatedPassword_obj);
 
            let url = properties.properties.password_generate_api;
@@ -154,22 +154,23 @@ class AdminOperationsPage extends React.Component{
                 readXlsxFile(input.files[0]).then((rows) => {
                     let name_index, sapId_index, stream_index, manager_index, managerSapid_index;
                     for(let findIndex in rows[0]){
-                        if(rows[0][findIndex] == "Name"){
+                       let column_header = rows[0][findIndex].toLowerCase();
+                        if(column_header.indexOf("name")!= -1){
                             name_index = findIndex;
                         }
-                        if(rows[0][findIndex] == "SapId"){
+                        if(column_header.indexOf("sapid")!=-1){
                             sapId_index = findIndex;
                         }
-                        if(rows[0][findIndex] == "Stream"){
+                        if(column_header.indexOf("stream")!=-1){
                             stream_index = findIndex;
                         }
-                        if(rows[0][findIndex] == "Manager"){
+                        if(column_header.indexOf("manager")!=-1){
                             manager_index = findIndex;
                         }
-                        if(rows[0][findIndex] == "Manager SapId"){
+                        if(column_header.indexOf("manager")!=-1 && column_header.indexOf("sapId")!=-1 ){
                             managerSapid_index = findIndex;
                         }
-                        if(rows[0][findIndex] == "ExamType"){
+                        if(column_header.indexOf("exam")!=-1 && column_header.indexOf("type")!=-1){
                             exam_type_index = findIndex;
                         }
                     }
@@ -399,7 +400,7 @@ class AdminOperationsPage extends React.Component{
                         <div className="col-md-4 col-md-offset-4">
                         <div className="form-group">
                     <label className="control-label">Exam Type</label>
-                    <select className="form-control" name="exam_type" ref="examType" onChange = {this.onChange} required>
+                    <select className="form-control" name="examType" ref="examType" onChange = {this.onChange} required>
                     <option>--select--</option>
                     <option value="PRE">Pre-IKM</option>
                     <option value="POST">Post-IKM</option>
