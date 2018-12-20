@@ -92,13 +92,16 @@ class AdminOperationsPage extends React.Component{
                 this.setState({ [e.target.name]: trim_input});
             }
         }
-        if(e.target.name == "stream" || e.target.name == "examType"){
+        if(e.target.name == "stream"){
             if(input_value == this.refs.select[0].innerText){
                 this.setState({showModal : true, error : true, modal_msg : "Please select a valid input from the list" });
                 //alert("");
             }else{
                 this.setState({[e.target.name]: e.target.value});
             }           
+        }
+        else{
+            this.setState({[e.target.name]: e.target.value});
         }
       }
       onSubmit(e){
@@ -399,12 +402,15 @@ class AdminOperationsPage extends React.Component{
                     <div className="row">
                         <div className="col-md-4 col-md-offset-4">
                         <div className="form-group">
-                    <label className="control-label">Exam Type</label>
-                    <select className="form-control" name="examType" ref="examType" onChange = {this.onChange} required>
+                    <label className="control-label">Exam Type</label><br/>
+                    <input type="radio" name="examType" onClick = {this.onChange} value="PRE"/> PRE <nbps/><nbps/>
+                    <input type="radio" name="examType" onClick = {this.onChange} value="POST"/> POST
+    
+                   {/* <select className="form-control" name="examType" ref="examType" onChange = {this.onChange} required>
                     <option>--select--</option>
                     <option value="PRE">Pre-IKM</option>
                     <option value="POST">Post-IKM</option>
-                    </select>
+                </select> */}
                     </div>
                         </div>
                     </div>
